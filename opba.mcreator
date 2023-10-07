@@ -650,7 +650,7 @@
       "type": "procedure",
       "sortid": 29,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "training_durability",
       "metadata": {
         "files": [

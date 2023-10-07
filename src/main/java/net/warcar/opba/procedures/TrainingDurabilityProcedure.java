@@ -13,22 +13,26 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 
 import javax.annotation.Nullable;
+import net.minecraft.world.damagesource.DamageSource;
+import org.apache.commons.compress.harmony.unpack200.bytecode.forms.NewClassRefForm;
 
 @Mod.EventBusSubscriber
 public class TrainingDurabilityProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity(), event.getAmount());
+			execute(event, event.getEntity(), event.getAmount(), event.getSource());
 		}
 	}
 
-	public static void execute(Entity entity, double amount) {
-		execute(null, entity, amount);
+	public static void execute(Entity entity, double amount, DamageSource source) {
+		execute(null, entity, amount, source);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, double amount) {
+	private static void execute(@Nullable Event event, Entity entity, double amount, DamageSource source) {
 		if (entity == null)
+			return;
+		if (source == new DamageSource("").OUT_OF_WORLD)
 			return;
 		double durTrained = 0;
 		durTrained = amount;
