@@ -16,6 +16,8 @@ package net.warcar.opba;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+import net.warcar.opba.init.OpbaModItems;
+
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.NetworkEvent;
@@ -41,6 +43,8 @@ public class OpbaMod {
 	public OpbaMod() {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		OpbaModItems.REGISTRY.register(bus);
 
 	}
 

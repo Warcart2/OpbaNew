@@ -1,4 +1,5 @@
 {
   "config.opba.opba_mod_common": "opba/common",
+  "item.opba.special_book": "Special Book",
   "attribute.opba.intelligence": "intelligence"
 }

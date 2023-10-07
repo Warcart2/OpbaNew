@@ -667,6 +667,42 @@
           }
         ]
       }
+    },
+    {
+      "name": "ReadingBooks",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reading_books",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/ReadingBooksProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SpecialBook",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "special_book",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/item/SpecialBookItem.java",
+          "src/main/resources/assets/opba/models/item/special_book.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -699,6 +735,7 @@
   "language_map": {
     "en_us": {
       "config.opba.opba_mod_common": "opba/common",
+      "item.opba.special_book": "Special Book",
       "attribute.opba.intelligence": "intelligence"
     }
   },
@@ -723,7 +760,11 @@
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [],
+    "mcreatorDependencies": [
+      "kleidersplayerrenderer",
+      "curios_api",
+      "playeranimator"
+    ],
     "currentGenerator": "forge-1.18.2",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.warcar.opba",
