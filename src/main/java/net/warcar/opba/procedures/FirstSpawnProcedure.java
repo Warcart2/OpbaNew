@@ -39,18 +39,26 @@ public class FirstSpawnProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).setBaseValue((Mth.nextInt(new Random(), 0, 70)));
+			((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get())
+					.setBaseValue((Mth.nextInt(new Random(), (int) (double) OPBAModCommonConfiguration.MIN_INTELLIGENCE.get(), (int) (double) OPBAModCommonConfiguration.MAX_BORN_INTELLIGENCE.get())));
 			{
-				double _setval = Mth.nextInt(new Random(), 1, (int) (double) OPBAModCommonConfiguration.MAX_BORN_POWER.get());
+				double _setval = Mth.nextInt(new Random(), (int) (double) OPBAModCommonConfiguration.MIN_POWER.get(), (int) (double) OPBAModCommonConfiguration.MAX_BORN_POWER.get());
 				entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.Power = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}
 			{
-				double _setval = Mth.nextInt(new Random(), -100, 100);
+				double _setval = Mth.nextInt(new Random(), (int) (double) OPBAModCommonConfiguration.MIN_DURABILITY.get(), (int) (double) OPBAModCommonConfiguration.MAX_BORN_DURABILITY.get());
 				entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.Durability = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				double _setval = Mth.nextInt(new Random(), (int) (double) OPBAModCommonConfiguration.MIN_SPEED.get(), (int) (double) OPBAModCommonConfiguration.MAX_BORN_SPEED.get());
+				entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.Speed = _setval;
 					capability.syncPlayerVariables(entity);
 				});
 			}

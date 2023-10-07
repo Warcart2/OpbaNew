@@ -1,5 +1,7 @@
 package net.warcar.opba.network;
 
+import org.checkerframework.checker.units.qual.Speed;
+
 import net.warcar.opba.OpbaMod;
 
 import net.minecraftforge.network.PacketDistributor;
@@ -69,6 +71,7 @@ public class OpbaModVariables {
 			clone.Born = original.Born;
 			clone.Power = original.Power;
 			clone.Durability = original.Durability;
+			clone.Speed = original.Speed;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -108,6 +111,7 @@ public class OpbaModVariables {
 		public boolean Born = false;
 		public double Power = 0;
 		public double Durability = 0;
+		public double Speed = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -119,6 +123,7 @@ public class OpbaModVariables {
 			nbt.putBoolean("Born", Born);
 			nbt.putDouble("Power", Power);
 			nbt.putDouble("Durability", Durability);
+			nbt.putDouble("Speed", Speed);
 			return nbt;
 		}
 
@@ -127,6 +132,7 @@ public class OpbaModVariables {
 			Born = nbt.getBoolean("Born");
 			Power = nbt.getDouble("Power");
 			Durability = nbt.getDouble("Durability");
+			Speed = nbt.getDouble("Speed");
 		}
 	}
 
@@ -154,6 +160,7 @@ public class OpbaModVariables {
 					variables.Born = message.data.Born;
 					variables.Power = message.data.Power;
 					variables.Durability = message.data.Durability;
+					variables.Speed = message.data.Speed;
 				}
 			});
 			context.setPacketHandled(true);

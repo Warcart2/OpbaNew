@@ -1,0 +1,19 @@
+package net.warcar.opba.procedures;
+
+import net.warcar.opba.init.OpbaModAttributes;
+
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.commands.CommandSourceStack;
+
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.arguments.DoubleArgumentType;
+
+public class StatsIntelligenceAddSelfProcedure {
+	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
+		if (entity == null)
+			return;
+		((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get())
+				.setBaseValue(Math.min(500, Math.max(1, ((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue() + DoubleArgumentType.getDouble(arguments, "amount"))));
+	}
+}

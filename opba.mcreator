@@ -123,7 +123,7 @@
           }
         ]
       },
-      "path": "~/stats/durability"
+      "path": "~/stats"
     },
     {
       "name": "StatsDurabilitySet",
@@ -143,7 +143,7 @@
           }
         ]
       },
-      "path": "~/stats/durability"
+      "path": "~/stats"
     },
     {
       "name": "StatsDurabilityGet",
@@ -167,7 +167,7 @@
           }
         ]
       },
-      "path": "~/stats/durability"
+      "path": "~/stats"
     },
     {
       "name": "StatsDurabilityGetSelf",
@@ -187,7 +187,7 @@
           }
         ]
       },
-      "path": "~/stats/durability"
+      "path": "~/stats"
     },
     {
       "name": "StatsDurabilityAdd",
@@ -207,7 +207,7 @@
           }
         ]
       },
-      "path": "~/stats/durability"
+      "path": "~/stats"
     },
     {
       "name": "StatsDurabilityAddSelf",
@@ -231,7 +231,7 @@
           }
         ]
       },
-      "path": "~/stats/durability"
+      "path": "~/stats"
     },
     {
       "name": "OPBAModCommon",
@@ -244,6 +244,406 @@
           "src/main/java/net/warcar/opba/configuration/OPBAModCommonConfiguration.java"
         ]
       }
+    },
+    {
+      "name": "StatsIntelligenceSetSelf",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_intelligence_set_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsIntelligenceSetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsIntelligenceSet",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_intelligence_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsIntelligenceSetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsIntelligenceGet",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_intelligence_get",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsIntelligenceGetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsIntelligenceGetSelf",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_intelligence_get_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsIntelligenceGetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsIntelligenceAdd",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_intelligence_add",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsIntelligenceAddProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsIntelligenceAddSelf",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_intelligence_add_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsIntelligenceAddSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsPowerSetSelf",
+      "type": "procedure",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_power_set_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsPowerSetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsPowerSet",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_power_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsPowerSetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsPowerGet",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_power_get",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsPowerGetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsPowerGetSelf",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_power_get_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsPowerGetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsPowerAdd",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_power_add",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsPowerAddProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsPowerAddSelf",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_power_add_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsPowerAddSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsSpeedSetSelf",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_speed_set_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsSpeedSetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsSpeedSet",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_speed_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsSpeedSetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsSpeedGet",
+      "type": "procedure",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_speed_get",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsSpeedGetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsSpeedGetSelf",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_speed_get_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsSpeedGetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsSpeedAdd",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_speed_add",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsSpeedAddProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsSpeedAddSelf",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_speed_add_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsSpeedAddSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
     }
   ],
   "variable_elements": [
@@ -264,13 +664,19 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "Speed",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "config.opba.opba_mod_common": "opba/common",
-      "attribute.opba.intelligence": "Intelligence"
+      "attribute.opba.intelligence": "intelligence"
     }
   },
   "foldersRoot": {
@@ -278,12 +684,7 @@
     "children": [
       {
         "name": "stats",
-        "children": [
-          {
-            "name": "durability",
-            "children": []
-          }
-        ]
+        "children": []
       }
     ]
   },

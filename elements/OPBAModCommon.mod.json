@@ -17,9 +17,207 @@
             "logicField": 0,
             "numberField": 100.0,
             "textDefault": "",
-            "comment": "Max Power On Start",
-            "vardisplay": "MaxBornPower",
+            "comment": "Maximum Power On Start",
+            "vardisplay": "Max Born Power",
             "varname": "max_born_power",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 100.0,
+            "textDefault": "",
+            "comment": "Maximum Durability On Start",
+            "vardisplay": "Max Born Durability",
+            "varname": "max_born_durability",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 70.0,
+            "textDefault": "",
+            "comment": "Maximum Intelligence On Start",
+            "vardisplay": "Max Born Intelligence",
+            "varname": "max_born_intelligence",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 500.0,
+            "textDefault": "",
+            "comment": "Maximum Power",
+            "vardisplay": "Max Power",
+            "varname": "max_power",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "Minimum Power",
+            "vardisplay": "Min Power",
+            "varname": "min_power",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 500.0,
+            "textDefault": "",
+            "comment": "Maximum Durability",
+            "vardisplay": "Max Durability",
+            "varname": "max_durability",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": -100.0,
+            "textDefault": "",
+            "comment": "Minimum Durability",
+            "vardisplay": "Min Durability",
+            "varname": "min_durability",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 500.0,
+            "textDefault": "",
+            "comment": "Maximum Intelligence",
+            "vardisplay": "Max Intelligence",
+            "varname": "max_intelligence",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "Minimum Intelligence",
+            "vardisplay": "Min Intelligence",
+            "varname": "min_intelligence",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 50.0,
+            "textDefault": "",
+            "comment": "Maximum Speed On Start",
+            "vardisplay": "Max Born Speed",
+            "varname": "max_born_speed",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 500.0,
+            "textDefault": "",
+            "comment": "Maximum Speed",
+            "vardisplay": "Max Speed",
+            "varname": "max_speed",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": -20.0,
+            "textDefault": "",
+            "comment": "Minimum Speed",
+            "vardisplay": "Min Speed",
+            "varname": "min_speed",
             "enablecomment": true,
             "onlyComment": false,
             "entityType": "EntityAgeable"
