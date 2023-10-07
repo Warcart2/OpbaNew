@@ -1,0 +1,302 @@
+{
+  "mod_elements": [
+    {
+      "name": "FirstSpawn",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "first_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/FirstSpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AttributesApply",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "attributes_apply",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/AttributesApplyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stats",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/command/StatsCommand.java"
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsRegenerate",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "stats_regenerate",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsRegenerateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "StatsRegenerateSelf",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_regenerate_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsRegenerateSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats"
+    },
+    {
+      "name": "Intelligence",
+      "type": "attribute",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "intelligence",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "StatsDurabilitySetSelf",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_durability_set_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsDurabilitySetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats/durability"
+    },
+    {
+      "name": "StatsDurabilitySet",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_durability_set",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsDurabilitySetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats/durability"
+    },
+    {
+      "name": "StatsDurabilityGet",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_durability_get",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsDurabilityGetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats/durability"
+    },
+    {
+      "name": "StatsDurabilityGetSelf",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_durability_get_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsDurabilityGetSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats/durability"
+    },
+    {
+      "name": "StatsDurabilityAdd",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_durability_add",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsDurabilityAddProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/stats/durability"
+    },
+    {
+      "name": "StatsDurabilityAddSelf",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats_durability_add_self",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/StatsDurabilityAddSelfProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/stats/durability"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "Intelligence",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Born",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "Power",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Durability",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "attribute.opba.intelligence": "Intelligence"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "stats",
+        "children": [
+          {
+            "name": "durability",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "opba",
+    "modName": "The One Piece Bizzare Adventure",
+    "version": "0.0",
+    "author": "Warcar, Neppall",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.warcar.opba",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300110610
+}
