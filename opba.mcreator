@@ -644,6 +644,29 @@
         ]
       },
       "path": "~/stats"
+    },
+    {
+      "name": "TrainingDurability",
+      "type": "procedure",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "training_durability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/TrainingDurabilityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

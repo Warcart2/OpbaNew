@@ -17,6 +17,7 @@ public class OPBAModCommonConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> MAX_BORN_SPEED;
 	public static final ForgeConfigSpec.ConfigValue<Double> MAX_SPEED;
 	public static final ForgeConfigSpec.ConfigValue<Double> MIN_SPEED;
+	public static final ForgeConfigSpec.ConfigValue<Double> TRAINING_DIF;
 	static {
 		BUILDER.push("Stats");
 		MAX_BORN_POWER = BUILDER.comment("Maximum Power On Start").define("Max Born Power", (double) 100);
@@ -31,6 +32,7 @@ public class OPBAModCommonConfiguration {
 		MAX_BORN_SPEED = BUILDER.comment("Maximum Speed On Start").define("Max Born Speed", (double) 50);
 		MAX_SPEED = BUILDER.comment("Maximum Speed").define("Max Speed", (double) 500);
 		MIN_SPEED = BUILDER.comment("Minimum Speed").define("Min Speed", (double) -20);
+		TRAINING_DIF = BUILDER.comment("Difficulty of all the trainings").define("Trainings difficulty", (double) 500);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();

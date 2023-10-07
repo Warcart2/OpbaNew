@@ -221,6 +221,24 @@
             "enablecomment": true,
             "onlyComment": false,
             "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 500.0,
+            "textDefault": "",
+            "comment": "Difficulty of all the trainings",
+            "vardisplay": "Trainings difficulty",
+            "varname": "training_dif",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
           }
         ]
       }
