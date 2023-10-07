@@ -1,3 +1,4 @@
 {
+  "config.opba.opba_mod_common": "opba/common",
   "attribute.opba.intelligence": "Intelligence"
 }

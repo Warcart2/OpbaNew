@@ -1,12 +1,15 @@
 package net.warcar.opba.procedures;
 
 import net.warcar.opba.network.OpbaModVariables;
+import net.warcar.opba.init.OpbaModAttributes;
+import net.warcar.opba.configuration.OPBAModCommonConfiguration;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.Mth;
 
@@ -36,15 +39,9 @@ public class FirstSpawnProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).setBaseValue((Mth.nextInt(new Random(), 0, 70)));
 			{
-				double _setval = Mth.nextInt(new Random(), 0, 70);
-				entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.Intelligence = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = Mth.nextInt(new Random(), 1, 100);
+				double _setval = Mth.nextInt(new Random(), 1, (int) (double) OPBAModCommonConfiguration.MAX_BORN_POWER.get());
 				entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.Power = _setval;
 					capability.syncPlayerVariables(entity);
@@ -57,7 +54,6 @@ public class FirstSpawnProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			AttributesApplyProcedure.execute(entity);
 		}
 	}
 }

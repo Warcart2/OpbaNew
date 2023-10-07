@@ -66,7 +66,6 @@ public class OpbaModVariables {
 			event.getOriginal().revive();
 			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-			clone.Intelligence = original.Intelligence;
 			clone.Born = original.Born;
 			clone.Power = original.Power;
 			clone.Durability = original.Durability;
@@ -106,7 +105,6 @@ public class OpbaModVariables {
 	}
 
 	public static class PlayerVariables {
-		public double Intelligence = 0;
 		public boolean Born = false;
 		public double Power = 0;
 		public double Durability = 0;
@@ -118,7 +116,6 @@ public class OpbaModVariables {
 
 		public Tag writeNBT() {
 			CompoundTag nbt = new CompoundTag();
-			nbt.putDouble("Intelligence", Intelligence);
 			nbt.putBoolean("Born", Born);
 			nbt.putDouble("Power", Power);
 			nbt.putDouble("Durability", Durability);
@@ -127,7 +124,6 @@ public class OpbaModVariables {
 
 		public void readNBT(Tag Tag) {
 			CompoundTag nbt = (CompoundTag) Tag;
-			Intelligence = nbt.getDouble("Intelligence");
 			Born = nbt.getBoolean("Born");
 			Power = nbt.getDouble("Power");
 			Durability = nbt.getDouble("Durability");
@@ -155,7 +151,6 @@ public class OpbaModVariables {
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-					variables.Intelligence = message.data.Intelligence;
 					variables.Born = message.data.Born;
 					variables.Power = message.data.Power;
 					variables.Durability = message.data.Durability;

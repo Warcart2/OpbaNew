@@ -232,15 +232,21 @@
         ]
       },
       "path": "~/stats/durability"
+    },
+    {
+      "name": "OPBAModCommon",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "opba_mod_common",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/configuration/OPBAModCommonConfiguration.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
-    {
-      "name": "Intelligence",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
     {
       "name": "Born",
       "type": "logic",
@@ -263,6 +269,7 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "config.opba.opba_mod_common": "opba/common",
       "attribute.opba.intelligence": "Intelligence"
     }
   },
