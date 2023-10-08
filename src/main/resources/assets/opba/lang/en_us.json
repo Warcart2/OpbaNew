@@ -1,6 +1,6 @@
 {
   "config.opba.opba_mod_client": "opba/client",
-  "config.opba.opba_mod_common": "common",
+  "config.opba.opba_mod_common": "opba/common",
   "item.opba.special_book": "Special Book",
   "attribute.opba.intelligence": "intelligence"
 }

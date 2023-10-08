@@ -39,7 +39,7 @@ public class TrainingDurabilityProcedure {
 		if (entity instanceof Player || entity instanceof ServerPlayer) {
 			while (durTrained > (double) OPBAModCommonConfiguration.TRAINING_DIF.get()
 					* Math.pow(2.3, Math.round((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Durability / 7))) {
-				if ((double) OPBAModCommonConfiguration.TRAINING_DIF.get() * Math.pow(2.3, Math.round((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Durability / 7)) != 0) {
+				if ((double) OPBAModCommonConfiguration.TRAINING_DIF.get() * Math.pow(1.3, Math.round((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Durability / 7)) != 0) {
 					durTrained = durTrained - (double) OPBAModCommonConfiguration.TRAINING_DIF.get()
 							* Math.pow(2.3, Math.round((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Durability / 7));
 				} else {
@@ -55,8 +55,8 @@ public class TrainingDurabilityProcedure {
 			}
 			{
 				double _setval = Math.min((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Durability + durTrained
-						/ ((double) OPBAModCommonConfiguration.TRAINING_DIF.get() * Math.pow(2.3, Math.round((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Durability / 7))),
-						500);
+						/ ((double) OPBAModCommonConfiguration.TRAINING_DIF.get() * Math.pow(1.3, Math.round((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Durability / 7))),
+						(double) OPBAModCommonConfiguration.MAX_DURABILITY.get());
 				entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.Durability = _setval;
 					capability.syncPlayerVariables(entity);
