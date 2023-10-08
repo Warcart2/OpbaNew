@@ -236,6 +236,7 @@
     {
       "name": "OPBAModCommon",
       "type": "config",
+      "sortid": 36,
       "compiles": true,
       "locked_code": false,
       "registry_name": "opba_mod_common",
@@ -694,6 +695,7 @@
     {
       "name": "SpecialBook",
       "type": "item",
+      "sortid": 34,
       "compiles": true,
       "locked_code": false,
       "registry_name": "special_book",
@@ -701,6 +703,57 @@
         "files": [
           "src/main/java/net/warcar/opba/item/SpecialBookItem.java",
           "src/main/resources/assets/opba/models/item/special_book.json"
+        ]
+      }
+    },
+    {
+      "name": "Test",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/TestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OPBAModClient",
+      "type": "config",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "opba_mod_client",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/configuration/OPBAModClientConfiguration.java"
+        ]
+      }
+    },
+    {
+      "name": "SpecialBookItemInInventoryTick",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "special_book_item_in_inventory_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/SpecialBookItemInInventoryTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
         ]
       }
     }
@@ -734,7 +787,8 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "config.opba.opba_mod_common": "opba/common",
+      "config.opba.opba_mod_client": "opba/client",
+      "config.opba.opba_mod_common": "common",
       "item.opba.special_book": "Special Book",
       "attribute.opba.intelligence": "intelligence"
     }

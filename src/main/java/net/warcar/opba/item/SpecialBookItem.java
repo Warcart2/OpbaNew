@@ -1,6 +1,7 @@
 
 package net.warcar.opba.item;
 
+import net.warcar.opba.procedures.SpecialBookItemInInventoryTickProcedure;
 import net.warcar.opba.procedures.ReadingBooksProcedure;
 
 import net.minecraft.world.level.Level;
@@ -9,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
 
@@ -27,5 +29,11 @@ public class SpecialBookItem extends Item {
 
 		ReadingBooksProcedure.execute(entity, itemstack);
 		return ar;
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		SpecialBookItemInInventoryTickProcedure.execute(itemstack);
 	}
 }

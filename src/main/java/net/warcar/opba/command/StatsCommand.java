@@ -120,7 +120,7 @@ public class StatsCommand {
 
 					StatsDurabilityAddSelfProcedure.execute(arguments, entity);
 					return 0;
-				})))).then(Commands.literal("intelligence").then(Commands.literal("set").then(Commands.argument("amount", DoubleArgumentType.doubleArg(-100, 500)).then(Commands.argument("player", EntityArgument.player()).executes(arguments -> {
+				})))).then(Commands.literal("intelligence").then(Commands.literal("set").then(Commands.argument("amount", DoubleArgumentType.doubleArg(0, 500)).then(Commands.argument("player", EntityArgument.player()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

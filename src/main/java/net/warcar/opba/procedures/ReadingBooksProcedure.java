@@ -15,8 +15,15 @@ public class ReadingBooksProcedure {
 	public static void execute(Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).setBaseValue((Math.random() / 2 + ((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue()));
+		double i = 0;
+		((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get())
+				.setBaseValue(Math.min(Math.round(Math.random() * 100) / 200 + ((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue(), (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
+		if (((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue() == 0) {
+			i = 1;
+		} else {
+			i = ((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue();
+		}
 		if (entity instanceof Player _player)
-			_player.getCooldowns().addCooldown(itemstack.getItem(), Mth.nextInt(new Random(), (int) (double) OPBAModCommonConfiguration.TRAINING_DIF.get(), (int) ((double) OPBAModCommonConfiguration.TRAINING_DIF.get() * 10)));
+			_player.getCooldowns().addCooldown(itemstack.getItem(), (int) (Mth.nextInt(new Random(), (int) (double) OPBAModCommonConfiguration.TRAINING_DIF.get(), (int) ((double) OPBAModCommonConfiguration.TRAINING_DIF.get() * 10)) / i));
 	}
 }
