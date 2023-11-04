@@ -39,6 +39,14 @@ public class TrainingSpeedProcedure {
 					capability.syncPlayerVariables(sourceentity);
 				});
 			}
+			{
+				double _setval = Math.min((double) OPBAModCommonConfiguration.MAX_POWER.get(), (sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Power
+						+ 1 / (Math.round((sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Power) + (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
+				sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.Power = _setval;
+					capability.syncPlayerVariables(sourceentity);
+				});
+			}
 		}
 	}
 }

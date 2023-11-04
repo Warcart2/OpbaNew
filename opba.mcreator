@@ -707,25 +707,6 @@
       }
     },
     {
-      "name": "Test",
-      "type": "procedure",
-      "sortid": 31,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "test",
-      "metadata": {
-        "files": [
-          "src/main/java/net/warcar/opba/procedures/TestProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ]
-      }
-    },
-    {
       "name": "OPBAModClient",
       "type": "config",
       "sortid": 35,
@@ -775,6 +756,118 @@
           }
         ]
       }
+    },
+    {
+      "name": "NSwordedStyle",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "n_sworded_style",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/NSwordedStyleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JumpBoost",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jump_boost",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/JumpBoostProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ThreeSwordedStyle",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "three_sworded_style",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/ThreeSwordedStyleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FallSave",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fall_save",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/FallSaveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "distance",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AbiltyCounter",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abilty_counter",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/AbiltyCounterProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "write",
+            "type": "logic"
+          },
+          {
+            "name": "value",
+            "type": "number"
+          },
+          {
+            "name": "ability",
+            "type": "string"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -801,6 +894,24 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "PowerMultiplier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "DurabilityMultiplier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "SpeedMultiplier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
     }
   ],
   "sound_elements": [],

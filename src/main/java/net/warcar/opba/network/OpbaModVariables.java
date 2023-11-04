@@ -72,6 +72,9 @@ public class OpbaModVariables {
 			clone.Power = original.Power;
 			clone.Durability = original.Durability;
 			clone.Speed = original.Speed;
+			clone.PowerMultiplier = original.PowerMultiplier;
+			clone.DurabilityMultiplier = original.DurabilityMultiplier;
+			clone.SpeedMultiplier = original.SpeedMultiplier;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -112,6 +115,9 @@ public class OpbaModVariables {
 		public double Power = 0;
 		public double Durability = 0;
 		public double Speed = 0;
+		public double PowerMultiplier = 1.0;
+		public double DurabilityMultiplier = 1.0;
+		public double SpeedMultiplier = 1.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -124,6 +130,9 @@ public class OpbaModVariables {
 			nbt.putDouble("Power", Power);
 			nbt.putDouble("Durability", Durability);
 			nbt.putDouble("Speed", Speed);
+			nbt.putDouble("PowerMultiplier", PowerMultiplier);
+			nbt.putDouble("DurabilityMultiplier", DurabilityMultiplier);
+			nbt.putDouble("SpeedMultiplier", SpeedMultiplier);
 			return nbt;
 		}
 
@@ -133,6 +142,9 @@ public class OpbaModVariables {
 			Power = nbt.getDouble("Power");
 			Durability = nbt.getDouble("Durability");
 			Speed = nbt.getDouble("Speed");
+			PowerMultiplier = nbt.getDouble("PowerMultiplier");
+			DurabilityMultiplier = nbt.getDouble("DurabilityMultiplier");
+			SpeedMultiplier = nbt.getDouble("SpeedMultiplier");
 		}
 	}
 
@@ -161,6 +173,9 @@ public class OpbaModVariables {
 					variables.Power = message.data.Power;
 					variables.Durability = message.data.Durability;
 					variables.Speed = message.data.Speed;
+					variables.PowerMultiplier = message.data.PowerMultiplier;
+					variables.DurabilityMultiplier = message.data.DurabilityMultiplier;
+					variables.SpeedMultiplier = message.data.SpeedMultiplier;
 				}
 			});
 			context.setPacketHandled(true);

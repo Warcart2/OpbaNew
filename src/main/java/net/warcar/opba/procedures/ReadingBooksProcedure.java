@@ -16,8 +16,8 @@ public class ReadingBooksProcedure {
 		if (entity == null)
 			return;
 		double i = 0;
-		((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get())
-				.setBaseValue(Math.min(Math.round(Math.random() * 100) / 200 + ((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue(), (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
+		((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).setBaseValue(Math.min(((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue()
+				+ (Math.round(Math.random() * 100) / 200) / Math.pow(1.5, ((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue()), (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
 		if (((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue() == 0) {
 			i = 1;
 		} else {
