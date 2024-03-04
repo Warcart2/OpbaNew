@@ -231,7 +231,7 @@
               "value": ""
             },
             "logicField": 0,
-            "numberField": 500.0,
+            "numberField": 1.0,
             "textDefault": "",
             "comment": "Difficulty of all the trainings",
             "vardisplay": "Trainings difficulty",

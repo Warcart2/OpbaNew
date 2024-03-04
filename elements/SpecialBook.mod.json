@@ -2,9 +2,9 @@
   "_fv": 39,
   "_type": "item",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "wip",
-    "customModelName": "Normal",
+    "customModelName": "book:default",
     "name": "Special Book",
     "rarity": "COMMON",
     "creativeTab": {

@@ -32,7 +32,7 @@ public class OPBAModCommonConfiguration {
 		MAX_BORN_SPEED = BUILDER.comment("Maximum Speed On Start").define("Max Born Speed", (double) 50);
 		MAX_SPEED = BUILDER.comment("Maximum Speed").define("Max Speed", (double) 500);
 		MIN_SPEED = BUILDER.comment("Minimum Speed").define("Min Speed", (double) -20);
-		TRAINING_DIF = BUILDER.comment("Difficulty of all the trainings").define("Trainings difficulty", (double) 500);
+		TRAINING_DIF = BUILDER.comment("Difficulty of all the trainings").define("Trainings difficulty", (double) 1);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();

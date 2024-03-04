@@ -33,7 +33,7 @@ public class TrainingSpeedProcedure {
 		if (sourceentity instanceof Player || sourceentity instanceof ServerPlayer) {
 			{
 				double _setval = Math.min((double) OPBAModCommonConfiguration.MAX_SPEED.get(), (sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Speed
-						+ 1 / (Math.round((sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Speed) + (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
+						+ 0.5 / Math.pow(Math.round((sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Speed), (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
 				sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.Speed = _setval;
 					capability.syncPlayerVariables(sourceentity);
@@ -41,7 +41,7 @@ public class TrainingSpeedProcedure {
 			}
 			{
 				double _setval = Math.min((double) OPBAModCommonConfiguration.MAX_POWER.get(), (sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Power
-						+ 1 / (Math.round((sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Power) + (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
+						+ 1 / Math.pow(Math.round((sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).Power), (double) OPBAModCommonConfiguration.TRAINING_DIF.get()));
 				sourceentity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.Power = _setval;
 					capability.syncPlayerVariables(sourceentity);

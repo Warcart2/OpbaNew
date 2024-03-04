@@ -94,6 +94,7 @@
     {
       "name": "Intelligence",
       "type": "attribute",
+      "sortid": 48,
       "compiles": true,
       "locked_code": false,
       "registry_name": "intelligence",
@@ -651,7 +652,7 @@
       "type": "procedure",
       "sortid": 29,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "training_durability",
       "metadata": {
         "files": [
@@ -762,7 +763,7 @@
       "type": "procedure",
       "sortid": 39,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "n_sworded_style",
       "metadata": {
         "files": [
@@ -838,34 +839,84 @@
       }
     },
     {
-      "name": "AbiltyCounter",
+      "name": "TrainingSpeed2",
       "type": "procedure",
-      "sortid": 44,
+      "sortid": 45,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "abilty_counter",
+      "registry_name": "training_speed_2",
       "metadata": {
-        "return_type": "number",
         "files": [
-          "src/main/java/net/warcar/opba/procedures/AbiltyCounterProcedure.java"
+          "src/main/java/net/warcar/opba/procedures/TrainingSpeed2Procedure.java"
         ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "write",
-            "type": "logic"
-          },
-          {
-            "name": "value",
-            "type": "number"
-          },
-          {
-            "name": "ability",
-            "type": "string"
           }
+        ]
+      }
+    },
+    {
+      "name": "CustomDamages",
+      "type": "code",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "custom_damages",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/CustomDamages.java"
+        ]
+      }
+    },
+    {
+      "name": "Size",
+      "type": "attribute",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "size",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "Ability",
+      "type": "code",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "ability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/Ability.java"
+        ]
+      }
+    },
+    {
+      "name": "ContiniusAbility",
+      "type": "code",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "continius_ability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/ContiniusAbility.java"
+        ]
+      }
+    },
+    {
+      "name": "ModRegistries",
+      "type": "code",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mod_registries",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/ModRegistries.java"
         ]
       }
     }
@@ -912,6 +963,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "1.0"
+    },
+    {
+      "name": "AbilityCounter",
+      "type": "map_double",
+      "scope": "player_persistent",
+      "value": "new CompoundNBT()"
     }
   ],
   "sound_elements": [],
@@ -920,7 +977,8 @@
       "config.opba.opba_mod_client": "opba/client",
       "config.opba.opba_mod_common": "opba/common",
       "item.opba.special_book": "Special Book",
-      "attribute.opba.intelligence": "intelligence"
+      "attribute.opba.intelligence": "intelligence",
+      "attribute.opba.size": "Size"
     }
   },
   "foldersRoot": {
@@ -934,8 +992,8 @@
   },
   "workspaceSettings": {
     "modid": "opba",
-    "modName": "The One Piece Bizzare Adventure",
-    "version": "0.0",
+    "modName": "The One Piece Bizzare Adventure Core",
+    "version": "0.1",
     "author": "Warcar, Neppall",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
@@ -946,7 +1004,6 @@
     "dependants": [],
     "mcreatorDependencies": [
       "kleidersplayerrenderer",
-      "curios_api",
       "playeranimator"
     ],
     "currentGenerator": "forge-1.18.2",

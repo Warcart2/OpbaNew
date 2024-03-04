@@ -75,6 +75,7 @@ public class OpbaModVariables {
 			clone.PowerMultiplier = original.PowerMultiplier;
 			clone.DurabilityMultiplier = original.DurabilityMultiplier;
 			clone.SpeedMultiplier = original.SpeedMultiplier;
+			clone.AbilityCounter = original.AbilityCounter;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -118,6 +119,7 @@ public class OpbaModVariables {
 		public double PowerMultiplier = 1.0;
 		public double DurabilityMultiplier = 1.0;
 		public double SpeedMultiplier = 1.0;
+		CompoundTag AbilityCounter = new CompoundTag();
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -133,6 +135,7 @@ public class OpbaModVariables {
 			nbt.putDouble("PowerMultiplier", PowerMultiplier);
 			nbt.putDouble("DurabilityMultiplier", DurabilityMultiplier);
 			nbt.putDouble("SpeedMultiplier", SpeedMultiplier);
+			nbt.put("AbilityCounter", AbilityCounter);
 			return nbt;
 		}
 
@@ -145,6 +148,7 @@ public class OpbaModVariables {
 			PowerMultiplier = nbt.getDouble("PowerMultiplier");
 			DurabilityMultiplier = nbt.getDouble("DurabilityMultiplier");
 			SpeedMultiplier = nbt.getDouble("SpeedMultiplier");
+			AbilityCounter = nbt.getCompound("AbilityCounter");
 		}
 	}
 
@@ -176,6 +180,7 @@ public class OpbaModVariables {
 					variables.PowerMultiplier = message.data.PowerMultiplier;
 					variables.DurabilityMultiplier = message.data.DurabilityMultiplier;
 					variables.SpeedMultiplier = message.data.SpeedMultiplier;
+					variables.AbilityCounter = message.data.AbilityCounter;
 				}
 			});
 			context.setPacketHandled(true);

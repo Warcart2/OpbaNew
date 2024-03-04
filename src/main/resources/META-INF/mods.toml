@@ -4,8 +4,8 @@ license="Academic Free License v3.0"
 
 [[mods]]
 modId="opba"
-version="0.0"
-displayName="The One Piece Bizzare Adventure"
+version="0.1"
+displayName="The One Piece Bizzare Adventure Core"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
 authors="Warcar, Neppall"
@@ -21,12 +21,6 @@ authors="Warcar, Neppall"
 
 [[dependencies.opba]]
     modId="kleidersplayerrenderer"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
-[[dependencies.opba]]
-    modId="curios_api"
     mandatory=false
     versionRange="[0,)"
     ordering="NONE"
