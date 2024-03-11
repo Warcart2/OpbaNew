@@ -41,6 +41,7 @@
     {
       "name": "Stats",
       "type": "command",
+      "sortid": 56,
       "compiles": true,
       "locked_code": false,
       "registry_name": "stats",
@@ -708,38 +709,6 @@
       }
     },
     {
-      "name": "OPBAModClient",
-      "type": "config",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "opba_mod_client",
-      "metadata": {
-        "files": [
-          "src/main/java/net/warcar/opba/configuration/OPBAModClientConfiguration.java"
-        ]
-      }
-    },
-    {
-      "name": "SpecialBookItemInInventoryTick",
-      "type": "procedure",
-      "sortid": 37,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "special_book_item_in_inventory_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/warcar/opba/procedures/SpecialBookItemInInventoryTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ]
-      }
-    },
-    {
       "name": "TrainingSpeed",
       "type": "procedure",
       "sortid": 38,
@@ -763,7 +732,7 @@
       "type": "procedure",
       "sortid": 39,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "n_sworded_style",
       "metadata": {
         "files": [
@@ -919,6 +888,148 @@
           "src/main/java/net/warcar/opba/ModRegistries.java"
         ]
       }
+    },
+    {
+      "name": "OnHitAbility",
+      "type": "code",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "on_hit_ability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/OnHitAbility.java"
+        ]
+      }
+    },
+    {
+      "name": "OnHitAbilityUsage",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_hit_ability_usage",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Abilities",
+      "type": "command",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "abilities",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/command/AbilitiesCommand.java"
+        ]
+      },
+      "path": "~/ability"
+    },
+    {
+      "name": "ModAbilities",
+      "type": "code",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mod_abilities",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/ModAbilities.java"
+        ]
+      }
+    },
+    {
+      "name": "AbilityUsage",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ability_usage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/AbilityUsageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ParticleEngine",
+      "type": "code",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "particle_engine",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/ParticleEngine.java"
+        ]
+      },
+      "path": "~/ParticleEngine"
+    },
+    {
+      "name": "Test",
+      "type": "procedure",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/procedures/TestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/ParticleEngine"
+    },
+    {
+      "name": "PositionedAbility",
+      "type": "code",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "positioned_ability",
+      "metadata": {
+        "files": [
+          "src/main/java/net/warcar/opba/PositionedAbility.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -969,12 +1080,17 @@
       "type": "map_double",
       "scope": "player_persistent",
       "value": "new CompoundNBT()"
+    },
+    {
+      "name": "AllAbilities",
+      "type": "ability_list",
+      "scope": "player_persistent",
+      "value": "new ArrayList\u003c\u003e();"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "config.opba.opba_mod_client": "opba/client",
       "config.opba.opba_mod_common": "opba/common",
       "item.opba.special_book": "Special Book",
       "attribute.opba.intelligence": "intelligence",
@@ -986,6 +1102,14 @@
     "children": [
       {
         "name": "stats",
+        "children": []
+      },
+      {
+        "name": "ability",
+        "children": []
+      },
+      {
+        "name": "ParticleEngine",
         "children": []
       }
     ]

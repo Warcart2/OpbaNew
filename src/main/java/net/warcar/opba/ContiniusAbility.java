@@ -3,33 +3,31 @@ package net.warcar.opba;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
 
-public class ContiniusAbility extends Ability {
+public abstract class ContiniusAbility extends Ability {
 	protected int maxTime;
 	protected int time;
 
 	public ContiniusAbility(ResourceLocation name, int cooldown, int charge, int time) {
-		super(name, cooldown, charge);
-		this.maxTime = time;
+		this(name, cooldown, charge, time, NO_ABILITY);
 	}
 
-	public ContiniusAbility(ResourceLocation name, int cooldown, int charge, Ability origin, int time) {
-		this(name, cooldown, charge, time);
-		this.origin = origin;
+	public ContiniusAbility(ResourceLocation name, int cooldown, int charge, int time, Ability origin) {
+		super(name, cooldown, charge, origin);
+		this.maxTime = time;
 	}
 
 	public void setOnTimer() {
 		this.time = this.maxTime;
 	}
 
-	public void onTick(Entity entity) {
-	}
+	public abstract void onTick(Entity entity);
 
-	public void onEnd(Entity entity) {
-	}
+	public abstract void onEnd(Entity entity);
 
-	public void setTime(int NewTime) {
-		this.time = NewTime;
+	public void setTime(int newTime) {
+		this.time = newTime;
 	}
 
 	@Override

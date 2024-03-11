@@ -1,7 +1,6 @@
 package net.warcar.opba.init;
 
 import net.warcar.opba.configuration.OPBAModCommonConfiguration;
-import net.warcar.opba.configuration.OPBAModClientConfiguration;
 import net.warcar.opba.OpbaMod;
 
 import net.minecraftforge.fml.event.lifecycle.FMLConstructModEvent;
@@ -15,7 +14,6 @@ public class OpbaModConfigs {
 	@SubscribeEvent
 	public static void register(FMLConstructModEvent event) {
 		event.enqueueWork(() -> {
-			ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, OPBAModClientConfiguration.SPEC, "opba/client.toml");
 			ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, OPBAModCommonConfiguration.SPEC, "opba/common.toml");
 		});
 	}

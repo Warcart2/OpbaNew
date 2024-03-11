@@ -3,6 +3,7 @@ package net.warcar.opba.network;
 import org.checkerframework.checker.units.qual.Speed;
 
 import net.warcar.opba.OpbaMod;
+import net.warcar.opba.Ability;
 
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.NetworkEvent;
@@ -30,6 +31,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.client.Minecraft;
 
 import java.util.function.Supplier;
+import java.util.List;
+import java.util.ArrayList;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class OpbaModVariables {
@@ -76,6 +79,7 @@ public class OpbaModVariables {
 			clone.DurabilityMultiplier = original.DurabilityMultiplier;
 			clone.SpeedMultiplier = original.SpeedMultiplier;
 			clone.AbilityCounter = original.AbilityCounter;
+			clone.AllAbilities = original.AllAbilities;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -119,7 +123,8 @@ public class OpbaModVariables {
 		public double PowerMultiplier = 1.0;
 		public double DurabilityMultiplier = 1.0;
 		public double SpeedMultiplier = 1.0;
-		CompoundTag AbilityCounter = new CompoundTag();
+		public CompoundTag AbilityCounter = new CompoundTag();
+		public List<Ability> AllAbilities = new ArrayList<>();;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -136,6 +141,13 @@ public class OpbaModVariables {
 			nbt.putDouble("DurabilityMultiplier", DurabilityMultiplier);
 			nbt.putDouble("SpeedMultiplier", SpeedMultiplier);
 			nbt.put("AbilityCounter", AbilityCounter);
+			{
+				CompoundTag subNbt = new CompoundTag();
+				for (int i = 0; i < AllAbilities.size(); i++) {
+					subNbt.put(String.valueOf(i), AllAbilities.get(i).toTag());
+				}
+				nbt.put("AllAbilities", subNbt);
+			}
 			return nbt;
 		}
 
@@ -149,6 +161,13 @@ public class OpbaModVariables {
 			DurabilityMultiplier = nbt.getDouble("DurabilityMultiplier");
 			SpeedMultiplier = nbt.getDouble("SpeedMultiplier");
 			AbilityCounter = nbt.getCompound("AbilityCounter");
+			{
+				CompoundTag subNbt = nbt.getCompound("AllAbilities");
+				AllAbilities = new ArrayList<>();;
+				for (int i = 0; i < AllAbilities.size(); i++) {
+					AllAbilities.add(Ability.fromTag(subNbt.getCompound(String.valueOf(i))));
+				}
+			}
 		}
 	}
 
@@ -181,6 +200,7 @@ public class OpbaModVariables {
 					variables.DurabilityMultiplier = message.data.DurabilityMultiplier;
 					variables.SpeedMultiplier = message.data.SpeedMultiplier;
 					variables.AbilityCounter = message.data.AbilityCounter;
+					variables.AllAbilities = message.data.AllAbilities;
 				}
 			});
 			context.setPacketHandled(true);
