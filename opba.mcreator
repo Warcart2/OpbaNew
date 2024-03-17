@@ -728,25 +728,6 @@
       }
     },
     {
-      "name": "NSwordedStyle",
-      "type": "procedure",
-      "sortid": 39,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "n_sworded_style",
-      "metadata": {
-        "files": [
-          "src/main/java/net/warcar/opba/procedures/NSwordedStyleProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ]
-      }
-    },
-    {
       "name": "JumpBoost",
       "type": "procedure",
       "sortid": 41,
@@ -756,25 +737,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/warcar/opba/procedures/JumpBoostProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ThreeSwordedStyle",
-      "type": "procedure",
-      "sortid": 42,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "three_sworded_style",
-      "metadata": {
-        "files": [
-          "src/main/java/net/warcar/opba/procedures/ThreeSwordedStyleProcedure.java"
         ],
         "dependencies": [
           {
@@ -837,17 +799,6 @@
         "files": [
           "src/main/java/net/warcar/opba/CustomDamages.java"
         ]
-      }
-    },
-    {
-      "name": "Size",
-      "type": "attribute",
-      "sortid": 47,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "size",
-      "metadata": {
-        "files": []
       }
     },
     {
@@ -983,42 +934,6 @@
       "path": "~/ParticleEngine"
     },
     {
-      "name": "Test",
-      "type": "procedure",
-      "sortid": 68,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "test",
-      "metadata": {
-        "files": [
-          "src/main/java/net/warcar/opba/procedures/TestProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/ParticleEngine"
-    },
-    {
       "name": "PositionedAbility",
       "type": "code",
       "sortid": 69,
@@ -1029,6 +944,16 @@
         "files": [
           "src/main/java/net/warcar/opba/PositionedAbility.java"
         ]
+      }
+    },
+    {
+      "name": "Books",
+      "type": "villagertrade",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "books",
+      "metadata": {
+        "files": []
       }
     }
   ],
@@ -1093,8 +1018,7 @@
     "en_us": {
       "config.opba.opba_mod_common": "opba/common",
       "item.opba.special_book": "Special Book",
-      "attribute.opba.intelligence": "intelligence",
-      "attribute.opba.size": "Size"
+      "attribute.opba.intelligence": "intelligence"
     }
   },
   "foldersRoot": {

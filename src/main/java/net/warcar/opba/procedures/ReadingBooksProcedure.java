@@ -24,6 +24,7 @@ public class ReadingBooksProcedure {
 			i = ((LivingEntity) entity).getAttribute(OpbaModAttributes.INTELLIGENCE.get()).getBaseValue();
 		}
 		if (entity instanceof Player _player)
-			_player.getCooldowns().addCooldown(itemstack.getItem(), (int) (Mth.nextInt(new Random(), (int) (double) OPBAModCommonConfiguration.TRAINING_DIF.get(), (int) ((double) OPBAModCommonConfiguration.TRAINING_DIF.get() * 10)) / i));
+			_player.getCooldowns().addCooldown(itemstack.getItem(),
+					(int) (Mth.nextInt(new Random(), (int) Math.pow(10, (double) OPBAModCommonConfiguration.TRAINING_DIF.get()), (int) Math.pow(10, (double) OPBAModCommonConfiguration.TRAINING_DIF.get() + 1)) / i));
 	}
 }

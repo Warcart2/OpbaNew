@@ -23,7 +23,6 @@ import net.minecraft.world.entity.EntityType;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class OpbaModAttributes {
 	public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, OpbaMod.MODID);
-	public static final RegistryObject<Attribute> SIZE = ATTRIBUTES.register("size", () -> (new RangedAttribute(OpbaMod.MODID + ".attribute" + ".size", 1.8, 0.4, 2048)).setSyncable(true));
 	public static final RegistryObject<Attribute> INTELLIGENCE = ATTRIBUTES.register("intelligence", () -> (new RangedAttribute(OpbaMod.MODID + ".attribute" + ".intelligence", 0, 0, 500)).setSyncable(true));
 
 	@SubscribeEvent
@@ -35,8 +34,6 @@ public class OpbaModAttributes {
 
 	@SubscribeEvent
 	public static void addAttributes(EntityAttributeModificationEvent event) {
-		event.add(EntityType.PLAYER, SIZE.get());
-		event.add(EntityType.PLAYER, SIZE.get());
 		event.add(EntityType.PLAYER, INTELLIGENCE.get());
 		event.add(EntityType.PLAYER, INTELLIGENCE.get());
 	}
@@ -47,7 +44,6 @@ public class OpbaModAttributes {
 		public static void persistAttributes(PlayerEvent.Clone event) {
 			Player oldP = event.getOriginal();
 			Player newP = (Player) event.getEntity();
-			newP.getAttribute(SIZE.get()).setBaseValue(oldP.getAttribute(SIZE.get()).getBaseValue());
 			newP.getAttribute(INTELLIGENCE.get()).setBaseValue(oldP.getAttribute(INTELLIGENCE.get()).getBaseValue());
 		}
 	}

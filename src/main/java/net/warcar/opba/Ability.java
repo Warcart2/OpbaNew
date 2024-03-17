@@ -1,18 +1,19 @@
 package net.warcar.opba;
 
-import net.minecraft.world.entity.Entity;
+import net.warcar.opba.network.OpbaModVariables;
+
 import net.minecraftforge.registries.ForgeRegistryEntry;
+
+import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraft.core.BlockPos;
 
 public abstract class Ability extends ForgeRegistryEntry<Ability> {
-	public static final Ability NO_ABILITY = new Ability(new ResourceLocation("opba", "no_ability"), 0, 0){
+	public static final Ability NO_ABILITY = new Ability(new ResourceLocation("opba", "no_ability"), 0, 0) {
 		@Override
-		public void onUse(Entity ignored) {}
+		public void onUse(Entity ignored) {
+		}
 	};
 	protected Ability origin;
 	protected int maxCooldown;
@@ -24,14 +25,20 @@ public abstract class Ability extends ForgeRegistryEntry<Ability> {
 		this(name, cooldown, charge, NO_ABILITY);
 	}
 
-	public Ability(ResourceLocation name, int cooldown, int charge, Ability origin){
+	public Ability(ResourceLocation name, int cooldown, int charge, Ability origin) {
 		this.setRegistryName(name);
 		this.maxCooldown = cooldown;
 		this.maxCharge = charge;
 		this.origin = origin;
 	}
 
-	public abstract void onUse(Entity entity);
+	public void onUse(Entity entity) {
+		CompoundTag tag = ((entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new OpbaModVariables.PlayerVariables())).AbilityCounter);
+		tag.putDouble(this.getRegistryName().toString(), tag.getDouble(this.getRegistryName().toString()) + 1);
+		entity.getCapability(OpbaModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+			capability.syncPlayerVariables(entity);
+		});
+	}
 
 	public boolean beforeCharge(Entity entity) {
 		return this.cooldown == 0;

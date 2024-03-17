@@ -1,9 +1,10 @@
 package net.warcar.opba;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
 
 public abstract class PositionedAbility extends ContiniusAbility {
 	protected BlockPos pos;
@@ -13,11 +14,11 @@ public abstract class PositionedAbility extends ContiniusAbility {
 	}
 
 	public PositionedAbility(ResourceLocation name, int cooldown, int charge, int time, Ability origin) {
-		this(name, cooldown, charge, time, new BlockPos(0, 0, 0), origin);
+		this(name, cooldown, charge, time, new BlockPos(0, 0, 0), origin);
 	}
 
 	public PositionedAbility(ResourceLocation name, int cooldown, int charge, int time, BlockPos inPos) {
-		this(name, cooldown, charge, time, inPos, NO_ABILITY);
+		this(name, cooldown, charge, time, inPos, NO_ABILITY);
 	}
 
 	public PositionedAbility(ResourceLocation name, int cooldown, int charge, int time, BlockPos inPos, Ability origin) {
@@ -34,6 +35,14 @@ public abstract class PositionedAbility extends ContiniusAbility {
 	}
 
 	public abstract void positonedPart(Level world);
+
+	@Override
+	public void trueTick(Entity entity) {
+		if (this.time > 1) {
+			this.positonedPart(entity.level);
+		}
+		super.trueTick(entity);
+	}
 
 	@Override
 	public CompoundTag toTag() {
